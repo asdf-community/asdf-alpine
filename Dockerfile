@@ -6,6 +6,7 @@ LABEL updated_at=2017-07-23
 RUN apk add --virtual .asdf-deps --no-cache bash curl git 
 SHELL ["/bin/bash", "-l", "-c"]
 RUN adduser -s /bin/bash -h /asdf -D asdf
+ENV PATH="${PATH}:/asdf/.asdf/shims"
 
 ONBUILD USER asdf
 ONBUILD WORKDIR /asdf
