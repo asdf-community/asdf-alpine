@@ -12,6 +12,7 @@ USER asdf
 WORKDIR /asdf
 
 COPY asdf-install-plugins /usr/local/bin
+COPY asdf-install-toolset /usr/local/bin
 
 ONBUILD USER asdf
 ONBUILD RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \
@@ -19,10 +20,3 @@ ONBUILD RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf 
     echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.profile && \
     source ~/.bashrc
 
-ONBUILD COPY .tool-* $HOME/
-
-ONBUILD USER root
-ONBUILD RUN bash ~asdf/.tool-deps
-
-ONBUILD USER asdf
-ONBUILD RUN asdf-install-plugins && source $HOME/.tool-setup-env && asdf install

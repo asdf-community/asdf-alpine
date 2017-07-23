@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+
+TOOL_DIR=$1
+source $TOOL_DIR/build-env
+asdf-install-plugins $TOOL_DIR/plugins
+asdf install
