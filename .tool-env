@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export CPPFlAGS="-D_BSD_SOURCE $CPPFLAGS"
+
