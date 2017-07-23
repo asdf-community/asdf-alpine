@@ -28,7 +28,7 @@ docker run --rm -ti vborja/asdf-alpine:elixir-1.5.0-rc.2-otp-20 iex
 
 ## Images
 
-The [list of available images][dockerhub] can be found at [dockerhub] and you can find their [source branch][https://github.com/vic/asdf-alpine/branches] on github.
+The [list of available images][dockerhub] can be found at [dockerhub] and you can find their [source branch][branches] on github.
 
 
 ## Contributing new tool sets or versions.
@@ -114,3 +114,4 @@ in this case from (erlang 20.0) and just add another tool into it.
 [asdf]: https://github.com/asdf-vm/asdf
 [builds]: https://hub.docker.com/r/vborja/asdf-alpine/builds/
 [multi]: https://docs.docker.com/engine/userguide/eng-image/multistage-build/
+[branches]: https://github.com/vic/asdf-alpine/branches
