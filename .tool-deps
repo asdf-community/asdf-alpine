@@ -2,6 +2,7 @@
 set -e
 
 # Erlang dependencies, shamelesly borrowed from bitwalker's alpine-erlang image.
+apk add --no-cache musl-dev musl
 
 # Add edge repos tagged so that we can selectively install edge packages
 echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
@@ -16,4 +17,4 @@ apk add --no-cache \
 
 # Install Erlang/OTP build deps
 apk add --no-cache --virtual .erlang-build \
-    git autoconf musl-dev musl build-base perl-dev
+    git autoconf build-base perl-dev
