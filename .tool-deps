@@ -1,1 +1,19 @@
-make build-base musl-dev musl ncurses-dev
+#!/usr/bin/env bash
+set -e
+
+# Erlang dependencies, shamelesly borrowed from bitwalker's alpine-erlang image.
+
+# Add edge repos tagged so that we can selectively install edge packages
+echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
+
+apk add --no-cache pcre@edge
+apk add --no-cache \
+    ca-certificates \
+    openssl-dev \
+    ncurses-dev \
+    unixodbc-dev \
+    zlib-dev
+
+# Install Erlang/OTP build deps
+apk add --no-cache --virtual .erlang-build \
+    git autoconf build-base perl-dev
