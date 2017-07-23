@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-set -e
-
 bash .asdf/plugins/nodejs/bin/import-release-team-keyring
+
+export NODEJS_CHECK_SIGNATURES=no # building from sources
+export NODEJS_EXTRA_CONFIGURE_OPTIONS="--fully-static"
