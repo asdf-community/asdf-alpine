@@ -1,1 +1,1 @@
-make build-base musl-dev musl perl
+make build-base musl-dev musl ncurses-dev
