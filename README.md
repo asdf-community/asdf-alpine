@@ -66,7 +66,7 @@ docker run --rm -ti nodejs-8.2.1 node
 
 The [`master Dockerfile`][master] from this repo serves as base for all asdf-alpine
 images. It's single purpose is to create an `asdf` user with home `/asdf`, copy
-the following files from the build environment:
+the following files from the build context:
 
 ### Tool Files
 
@@ -96,7 +96,7 @@ elixir https://github.com/asdf-vm/asdf-elixir.git
     An script that will be sourced as `asdf` user just before doing `asdf install`
     You can use it to set environment variables needed for building.
 
-For a working example see the files at [elixir-1.5.0-rc.2-otp-20] branch.
+For a working example see the files at [erlang-20.0] branch.
 
 
 [elixir-1.5.0-rc.2-otp-20]: https://github.com/vic/asdf-alpine/tree/elixir-1.5.0-rc.2-otp-20
