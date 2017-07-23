@@ -9,7 +9,7 @@ RUN adduser -s /bin/bash -h /asdf -D asdf
 
 ONBUILD USER asdf
 ONBUILD WORKDIR /asdf
-ONBUILD ADD .tool-deps .tool-repo .tool-versions /asdf/
+ONBUILD ADD .tool-deps .tool-env .tool-repo .tool-versions /asdf/
 
 ONBUILD USER root
 ONBUILD RUN bash ~asdf/.tool-deps
@@ -21,4 +21,4 @@ ONBUILD RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf 
     source ~/.bashrc
 
 ONBUILD RUN cat $HOME/.tool-repo | while read i; do asdf plugin-add $(echo $i | cut -d\  -f1) $(echo $i | cut -d\  -f2-); done
-ONBUILD RUN asdf install
+ONBUILD RUN source $HOME/.tool-env && asdf install
