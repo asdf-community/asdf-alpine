@@ -50,8 +50,10 @@ cd asdf-alpine
 # start working on a new node image
 git checkout --orphan nodejs-8.2.1
 rm * # clean the branch files
+
+
 echo 'FROM vborja/asdf-alpine' > Dockerfile
-# Read the following section and edit your .tool-* files 
+# Read the following section about Repo layout
 
 # build it
 docker build . -t nodejs-8.2.1
@@ -65,39 +67,47 @@ docker run --rm -ti nodejs-8.2.1 node
 ## Repo layout
 
 The [`master Dockerfile`][master] from this repo serves as base for all asdf-alpine
-images. It's single purpose is to create an `asdf` user with home `/asdf`, copy
-the following files from the build context:
+images. It's single purpose is to create an `asdf` user with home `/asdf`, add the
+asdf shim directory to PATH, along with a `asdf-install-toolset`. 
 
-### Tool Files
+Your repo can contain as many asdf tools as you want, the following example is
+taken from [erlang-20.0] branch.
 
-- `.tool-versions` 
-    A tipical asdf tool-versions file, following the same format as specified in the
-    asdf readme. You can list as many tools as you need.
-    
-    Example:
 ```
-erlang 20.0
-elixir 1.5.0-rc.1@otp-20
+/
+  Dockerfile    # 
+  
+  erlang/       # the directory name must be the same as the tool name.
+    version     # stores the erlang version as expected by asdf
+    plugin-repo # stores the erlang tool plugin url.
+    build-deps  # an script run as root to install system dependencies
+    build-env   # an script run as asdf user sourced before asdf install.  
+    
+  other/        # another tool with the same file structure
 ```
-    
-- `.tool-repo` 
-    This file contains the list of plugins that will be used on the image
-    
-```
-erlang https://github.com/asdf-vm/asdf-erlang.git
-elixir https://github.com/asdf-vm/asdf-elixir.git
-```
-    
-- `.tool-deps`
-    This should be an executable script that is run as `root` and it must
-    install all build/runtime dependencies for your toolset.
-    
-- `.tool-env` 
-    An script that will be sourced as `asdf` user just before doing `asdf install`
-    You can use it to set environment variables needed for building.
 
-For a working example see the files at [erlang-20.0] branch.
+The `Dockerfile` content typically looks like:
 
+```Dockerfile
+FROM vborja/asdf-alpine
+
+# start erlang install
+COPY erlang .asdf/toolset/erlang/
+USER root
+RUN bash .asdf/toolset/erlang/build-deps
+USER asdf
+RUN asdf-install-toolset erlang
+
+# install other tool if needed
+COPY other .asdf/toolset/other/
+USER root
+RUN bash .asdf/toolset/other/build-deps
+USER asdf
+RUN asdf-install-toolset other
+```
+
+Some images like [elixir-1.5.0-rc.2-otp-20] start from a previous one,
+in this case from (erlang 20.0) and just add another tool into it.
 
 [elixir-1.5.0-rc.2-otp-20]: https://github.com/vic/asdf-alpine/tree/elixir-1.5.0-rc.2-otp-20
 [erlang-20.0]: https://github.com/vic/asdf-alpine/tree/erlang-20.0
