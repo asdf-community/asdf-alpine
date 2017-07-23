@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cat .tool-plugins | while read i; do asdf plugin-add $(echo $i | cut -d\  -f1) $(echo $i | cut -d\  -f2-); done
