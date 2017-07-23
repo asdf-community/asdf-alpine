@@ -6,6 +6,8 @@ An image can provide one or more asdf tools, you can for example create a image
 with just erlang, or erlang+elixir or erlang+elixir+node, basically anything
 that asdf supports.
 
+There's also an [asdf-ubuntu](https://github.com/vic/asdf-ubuntu) sister repo.
+
 ## Build
 
 Images are [built automatically][builds] for every branch and published at [dockerhub].
