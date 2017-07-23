@@ -16,4 +16,4 @@ apk add --no-cache \
 
 # Install Erlang/OTP build deps
 apk add --no-cache --virtual .erlang-build \
-    git autoconf build-base perl-dev
+    git autoconf musl-dev musl build-base perl-dev
