@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+
+bash .asdf/plugins/nodejs/bin/import-release-team-keyring

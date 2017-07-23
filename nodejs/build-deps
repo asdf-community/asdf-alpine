@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg perl-utils libstdc++
