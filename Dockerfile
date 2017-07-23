@@ -10,11 +10,9 @@ RUN adduser -s /bin/bash -h /asdf -D asdf
 ONBUILD USER asdf
 ONBUILD WORKDIR /asdf
 ONBUILD ADD .tool-deps .tool-repo .tool-versions /asdf/
-ONBUILD RUN echo "DEPS: $(< ~asdf/.tool-deps)"
-ONBUILD RUN echo "REPO: $(< ~asdf/.tool-repo)"
 
 ONBUILD USER root
-ONBUILD RUN apk add --virtual .asdf-tool-deps --no-cache $(cat ~asdf/.tool-deps)
+ONBUILD RUN bash ~asdf/.tool-deps
 
 ONBUILD USER asdf
 ONBUILD RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf && \
