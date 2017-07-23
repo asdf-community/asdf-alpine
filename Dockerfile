@@ -1,9 +1,9 @@
 FROM vborja/asdf-alpine:latest
 
-COPY erlang/ .asdf-toolset/
+COPY erlang/ .asdf/toolset/
 
 USER root
-RUN  asdf-install-toolset-deps erlang
+RUN  bash .asdf/toolset/erlang/build-deps
 USER asdf
 RUN  asdf-install-toolset erlang
 
