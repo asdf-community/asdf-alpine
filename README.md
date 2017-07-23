@@ -28,20 +28,18 @@ docker run --rm -ti vborja/asdf-alpine:elixir-1.5.0-rc.2-otp-20 iex
 
 ## Images
 
-The following is a list of existing images with pre-installed toolsets. Be sure
-to add yours once your pull-request and image have been published to dockerhub.
-
-
-##### Elixir
-- [`elixir-1.5.0-rc.2-otp-20`](https://github.com/vic/asdf-alpine/tree/elixir-1.5.0-rc.2-otp-20)
-
-##### Erlang
-- [`erlang-20.0`](https://github.com/vic/asdf-alpine/tree/erlang-20.0)
+The [list of available images][dockerhub] can be found at [dockerhub] and you can find their [source branch][https://github.com/vic/asdf-alpine/branches] on github.
 
 
 ## Contributing new tool sets or versions.
 
-If you are adding a new tool, please create an orphan branch, for example
+All contributions are more than welcome, if you'd like to help expanding the number of tools available
+as docker images that would be really great!
+
+If you want to create a new version, just start a new branch from the old-version, and send a PR, be sure to
+build the image locally and test if the tool works as expected.
+
+If you are adding a new unrelated tool, please create an orphan branch, for example
 
 ```shell
 git clone https://github.com/vic/asdf-alpine
