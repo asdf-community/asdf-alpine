@@ -1,0 +1,10 @@
+sudo: required
+services:
+ - docker
+before_install:
+ - mkdir -p ~/.docker/config
+ - echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"${DOCKER_AUTH}\"}}}" > ~/.docker/config
+script:
+ - export REPO=vborja/asdf-alpine
+ - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+ - docker build -t ${REPO}:${TAG} && docker push ${REPO}:${TAG}
