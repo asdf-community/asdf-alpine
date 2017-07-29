@@ -1,0 +1,12 @@
+sudo: required
+language: c
+services:
+ - docker
+before_install:
+ - mkdir -p ~/.docker/
+ - echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"${AUTH}\"}}}" > ~/.docker/config.json
+ - export AUTH='nothing'
+script:
+ - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+ - docker build -t ${REPO}:${TAG} .
+ - docker push ${REPO}:${TAG}
