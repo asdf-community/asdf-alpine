@@ -8,6 +8,10 @@ that asdf supports.
 
 There's also an [asdf-ubuntu](https://github.com/vic/asdf-ubuntu) sister repo.
 
+## Images
+
+The list of [built][builds] images can be found at [dockerhub] and you can find their [source branch][branches] on github.
+
 ## Build
 
 Images are [built automatically][builds] for every branch and published at [dockerhub].
@@ -27,10 +31,6 @@ tool set published as an image, like latest elixir:
 ```
 docker run --rm -ti vborja/asdf-alpine:elixir-1.5.0-rc.2-otp-20 iex
 ```
-
-## Images
-
-The [list of available images][dockerhub] can be found at [dockerhub] and you can find their [source branch][branches] on github.
 
 
 ## Contributing new tool sets or versions.
@@ -114,6 +114,6 @@ in this case from (erlang 20.0) and just add another tool into it.
 [master]: https://github.com/vic/asdf-alpine/blob/master/Dockerfile
 [dockerhub]: https://hub.docker.com/r/vborja/asdf-alpine/tags/
 [asdf]: https://github.com/asdf-vm/asdf
-[builds]: https://hub.docker.com/r/vborja/asdf-alpine/builds/
+[builds]: https://travis-ci.org/vic/asdf-alpine/builds
 [multi]: https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 [branches]: https://github.com/vic/asdf-alpine/branches
