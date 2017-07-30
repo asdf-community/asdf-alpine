@@ -12,18 +12,25 @@ There's also an [asdf-ubuntu](https://github.com/vic/asdf-ubuntu) sister repo.
 
 The list of [built][builds] images can be found at [dockerhub] and you can find their [source branch][branches] on github.
 
+
+
+[_]: #begin-table
+
 | Status | Dockerfile |
 |--------|------------|
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.4.4-otp-19.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.4.4-otp-19)| [`FROM vborja/asdf-alpine:elixir-1.4.4-otp-19`](https://github.com/vborja/asdf-alpine/blob/elixir-1.4.4-otp-19/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.4.5-otp-19.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.4.5-otp-19)| [`FROM vborja/asdf-alpine:elixir-1.4.5-otp-19`](https://github.com/vborja/asdf-alpine/blob/elixir-1.4.5-otp-19/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.4.5-otp-20.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.4.5-otp-20)| [`FROM vborja/asdf-alpine:elixir-1.4.5-otp-20`](https://github.com/vborja/asdf-alpine/blob/elixir-1.4.5-otp-20/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.5.0-nodejs-8.2.1.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.5.0-nodejs-8.2.1)| [`FROM vborja/asdf-alpine:elixir-1.5.0-nodejs-8.2.1`](https://github.com/vborja/asdf-alpine/blob/elixir-1.5.0-nodejs-8.2.1/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.5.0-otp-20.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.5.0-otp-20)| [`FROM vborja/asdf-alpine:elixir-1.5.0-otp-20`](https://github.com/vborja/asdf-alpine/blob/elixir-1.5.0-otp-20/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.5.0-rc.2-otp-20.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.5.0-rc.2-otp-20)| [`FROM vborja/asdf-alpine:elixir-1.5.0-rc.2-otp-20`](https://github.com/vborja/asdf-alpine/blob/elixir-1.5.0-rc.2-otp-20/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/erlang-19.3.svg)](https://travis-ci.org/vic/asdf-alpine/branches#erlang-19.3)| [`FROM vborja/asdf-alpine:erlang-19.3`](https://github.com/vborja/asdf-alpine/blob/erlang-19.3/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/erlang-20.0.svg)](https://travis-ci.org/vic/asdf-alpine/branches#erlang-20.0)| [`FROM vborja/asdf-alpine:erlang-20.0`](https://github.com/vborja/asdf-alpine/blob/erlang-20.0/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/master.svg)](https://travis-ci.org/vic/asdf-alpine/branches#master)| [`FROM vborja/asdf-alpine:master`](https://github.com/vborja/asdf-alpine/blob/master/Dockerfile) |
-| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/nodejs-8.2.1.svg)](https://travis-ci.org/vic/asdf-alpine/branches#nodejs-8.2.1)| [`FROM vborja/asdf-alpine:nodejs-8.2.1`](https://github.com/vborja/asdf-alpine/blob/nodejs-8.2.1/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.4.4-otp-19.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.4.4-otp-19)| [`FROM vborja/asdf-alpine:elixir-1.4.4-otp-19`](https://github.com/vic/asdf-alpine/blob/elixir-1.4.4-otp-19/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.4.5-otp-19.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.4.5-otp-19)| [`FROM vborja/asdf-alpine:elixir-1.4.5-otp-19`](https://github.com/vic/asdf-alpine/blob/elixir-1.4.5-otp-19/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.4.5-otp-20.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.4.5-otp-20)| [`FROM vborja/asdf-alpine:elixir-1.4.5-otp-20`](https://github.com/vic/asdf-alpine/blob/elixir-1.4.5-otp-20/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.5.0-nodejs-8.2.1.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.5.0-nodejs-8.2.1)| [`FROM vborja/asdf-alpine:elixir-1.5.0-nodejs-8.2.1`](https://github.com/vic/asdf-alpine/blob/elixir-1.5.0-nodejs-8.2.1/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.5.0-otp-20.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.5.0-otp-20)| [`FROM vborja/asdf-alpine:elixir-1.5.0-otp-20`](https://github.com/vic/asdf-alpine/blob/elixir-1.5.0-otp-20/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/elixir-1.5.0-rc.2-otp-20.svg)](https://travis-ci.org/vic/asdf-alpine/branches#elixir-1.5.0-rc.2-otp-20)| [`FROM vborja/asdf-alpine:elixir-1.5.0-rc.2-otp-20`](https://github.com/vic/asdf-alpine/blob/elixir-1.5.0-rc.2-otp-20/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/erlang-19.3.svg)](https://travis-ci.org/vic/asdf-alpine/branches#erlang-19.3)| [`FROM vborja/asdf-alpine:erlang-19.3`](https://github.com/vic/asdf-alpine/blob/erlang-19.3/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/erlang-20.0.svg)](https://travis-ci.org/vic/asdf-alpine/branches#erlang-20.0)| [`FROM vborja/asdf-alpine:erlang-20.0`](https://github.com/vic/asdf-alpine/blob/erlang-20.0/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/master.svg)](https://travis-ci.org/vic/asdf-alpine/branches#master)| [`FROM vborja/asdf-alpine:master`](https://github.com/vic/asdf-alpine/blob/master/Dockerfile) |
+| [![Travis branch](https://img.shields.io/travis/vic/asdf-alpine/nodejs-8.2.1.svg)](https://travis-ci.org/vic/asdf-alpine/branches#nodejs-8.2.1)| [`FROM vborja/asdf-alpine:nodejs-8.2.1`](https://github.com/vic/asdf-alpine/blob/nodejs-8.2.1/Dockerfile) |
+
+[_]: #end-table
+
 
 ## Build
 

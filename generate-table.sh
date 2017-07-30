@@ -4,8 +4,9 @@ name="asdf-alpine"
 repo="vborja/$name"
 
 gh_repo="vic/$name"
-gh="https://github.com/$repo"
+gh="https://github.com/$gh_repo"
 
+function generate() {
 echo '| Status | Dockerfile |'
 echo '|--------|------------|'
 for i in $(curl  https://api.github.com/repos/$gh_repo/branches 2>/dev/null | jq -r .[].name); do
@@ -13,3 +14,21 @@ for i in $(curl  https://api.github.com/repos/$gh_repo/branches 2>/dev/null | jq
   echo -n "| [\`FROM $repo:$i\`]($gh/blob/$i/Dockerfile) "
   echo '|'
 done
+}
+
+ruby <<EOF
+table = """
+[_]: #begin-table
+
+$(generate)
+
+[_]: #end-table
+"""
+
+readme = File.read("README.md")
+readme = readme.gsub(/\[_\]: #begin-table(.*)#end-table/m, table)
+File.write("README.md", readme)
+EOF
+
+
+
