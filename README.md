@@ -114,6 +114,9 @@ The `Dockerfile` content typically looks like:
 ```Dockerfile
 FROM vborja/asdf-alpine
 
+# Pull latest asdf
+RUN asdf update --head
+
 # start erlang install
 COPY erlang .asdf/toolset/erlang/
 USER root
