@@ -2,11 +2,16 @@ FROM vborja/asdf-alpine:nodejs-8.2.1 as nodejs
 
 FROM vborja/asdf-alpine:elixir-1.5.0-otp-20
 
-RUN asdf update --head
 COPY --from=nodejs /asdf/.asdf/toolset/nodejs/ /asdf/.asdf/toolset/nodejs/
 COPY --from=nodejs /asdf/.asdf/plugins/nodejs/ /asdf/.asdf/plugins/nodejs/
 COPY --from=nodejs /asdf/.asdf/installs/nodejs/ /asdf/.asdf/installs/nodejs/
 COPY --from=nodejs /asdf/.asdf/shims/* /asdf/.asdf/shims/
+
+USER root
+RUN chown -R asdf /asdf
+
+USER asdf
+RUN asdf update --head
 RUN echo nodejs $(cat /asdf/.asdf/toolset/nodejs/version) >> .tool-versions
 
 
